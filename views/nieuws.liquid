@@ -15,13 +15,19 @@
     </form>
 
     <ul>
-        <li><a href=""></a></li> dynamisch
         {% for newsItem in news %}
-            {{ newsItem.title }}
+            <li>
+                <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
+                <a href="">
+                    {{ newsItem.title }}
+                </a>
+            </li> 
         {% endfor %}
+
     </ul>
 </main>
 
 {%  render 'partials/navbar.liquid' %}
 
 {%  render 'partials/foot.liquid' %}
+

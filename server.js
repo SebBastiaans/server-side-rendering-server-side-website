@@ -22,15 +22,29 @@ const tempDummyNews = {
       "date": "2025-11-20",
       "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
     },
+    {
+      "id": 3,
+      "body": "De bloei 3...",
+      "title": "De zadenknoppen van de teunisbloem zijn nu goed te zien 3",
+      "date": "2025-11-20",
+      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
+    {
+      "id": 4,
+      "body": "De bloei 4...",
+      "title": "De zadenknoppen van de teunisbloem zijn nu goed te zien 4",
+      "date": "2025-11-20",
+      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
   ]
 }
 
 console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // Doe een fetch naar de data die je nodig hebt
-const newsResponse = await fetch('...') //url in plakken
+// const newsResponse = await fetch('...') //url in plakken
 
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
-const apiResponseJSON = await apiResponse.json() 
+// const apiResponseJSON = await apiResponse.json() 
 
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
@@ -55,11 +69,17 @@ app.engine('liquid', engine.express());
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set('views', './views')
 
-// Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   response.render('index.liquid', {news: tempDummyNews})
+   response.render('index.liquid')
+})
+// Maak een GET route voor de index (meestal doe je dit in de root, als /)
+app.get('/nieuws', async function (request, response) {
+  console.log(tempDummyNews)
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   response.render('nieuws.liquid', {news: tempDummyNews.data})
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
