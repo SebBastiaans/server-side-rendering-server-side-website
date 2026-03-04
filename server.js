@@ -6,12 +6,31 @@ import express from 'express'
 import { Liquid } from 'liquidjs';
 
 
+const tempDummyNews = {
+  "data": [
+    {
+      "id": 1,
+      "body": "De bloei ...",
+      "title": "Laatste kans om de nabloei te zien van de duizendblad",
+      "date": "2025-11-20",
+      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
+    {
+      "id": 2,
+      "body": "De bloei teunis...",
+      "title": "De zadenknoppen van de teunisbloem zijn nu goed te zien",
+      "date": "2025-11-20",
+      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
+  ]
+}
+
 console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // Doe een fetch naar de data die je nodig hebt
-// const apiResponse = await fetch('...')
+const newsResponse = await fetch('...') //url in plakken
 
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
-// const apiResponseJSON = await apiResponse.json()
+const apiResponseJSON = await apiResponse.json() 
 
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
@@ -40,7 +59,7 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+   response.render('index.liquid', {news: tempDummyNews})
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen

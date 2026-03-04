@@ -16,6 +16,9 @@
 
     <ul>
         <li><a href=""></a></li> dynamisch
+        {% for newsItem in news %}
+            {{ newsItem.title }}
+        {% endfor %}
     </ul>
 </main>
 
