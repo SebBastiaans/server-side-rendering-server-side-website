@@ -1,6 +1,6 @@
 {%  render 'partials/head.liquid' %}
 
-<main>
+<header class="header-nieuws">
     <h1>Veld nieuws</h1>
 
     <ul>
@@ -13,10 +13,14 @@
         <img src="" alt="Zoek icoon">
         <input type="search" name="search" placeholder="Zoek">
     </form>
+</header>
 
+<main class="main-nieuws">
     <ul>
         {% for newsItem in news %}
             <li>
+                <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
+                <p>Bloemneveld</p>
                 <a href="">
                     {{ newsItem.title }}
                 </a>
