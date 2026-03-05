@@ -9,6 +9,7 @@ html{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
+
     h1{
         align-self: center;
     }
@@ -25,7 +26,7 @@ html{
 
             a{
                 text-decoration: none;
-                color: black;
+                color: var(--primary-text-color);
                 font-weight: bold;
             }
         }
@@ -50,6 +51,34 @@ html{
     }
 }
 /* *************************************************************** */
+/* alles van de header nieuws detail pagina *****************************/
+.header-nieuws-detail{
+    display: flex;
+    flex-direction: column;
+    padding-inline: .5rem;
+
+
+    h1{
+        align-self: center;
+    }
+
+    a{
+        background-image: url('/assets/terugIcon.svg');
+        background-repeat: no-repeat;
+
+        text-decoration: none;
+        color: var(--primary-text-color);
+        font-family: open-sans;
+        position: absolute;
+        padding-left: 1.6rem;
+        transform: translateY(70%);
+    }
+}
+.open-sans{
+    font-family: open-sans;
+    font-weight: 700;
+}
+/* *************************************************************** */
 /* alles van de main nieuws pagina *****************************/
 .main-nieuws{
     padding-inline: .5rem;
@@ -65,7 +94,7 @@ html{
             grid-template-columns: 1fr 2fr;
             gap: .5rem;
             padding-block: 1rem;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid var(--primary-text-color);
             align-items: flex-end;
 
             img{
@@ -77,17 +106,17 @@ html{
             p{
                 grid-area: tag;
                 margin: 0;
-                border: 1px solid black;
+                border: 1px solid var(--primary-text-color);
                 width: fit-content;
                 height: fit-content;
-                padding: 0.1rem;
+                padding: .1rem .2rem .1rem .2rem;
                 border-radius: 5rem;
             }
 
             a{
                 grid-area: title;
                 text-decoration: none;
-                color: black;
+                color: var(--primary-text-color);
                 font-weight: bold;
                 font-size: 1.1rem;
             }
@@ -114,7 +143,7 @@ html{
         }
         a{
             text-decoration: none;
-            color: black;
+            color: var(--primary-text-color);
         }
     }
 }

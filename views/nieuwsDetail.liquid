@@ -6,9 +6,9 @@
     {% for newsItem in news%} hoe doe ik maar 1 item????
         <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
         <time datetime="{{ newsItem.date }}"></time>
-        <h2>
+        <p class="open-sans">
             {{ newsItem.title }}
-        </h2>
+        </p>
         <p>
             {{ newsItem.body }}
         </p>
