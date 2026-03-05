@@ -76,12 +76,29 @@ app.get('/', async function (request, response) {
 })
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/nieuws', async function (request, response) {
-  console.log(tempDummyNews)
+  // console.log(tempDummyNews)
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
    response.render('nieuws.liquid', {news: tempDummyNews.data})
 })
+app.get('/nieuws-in-de-bloei', async function (request, response) {
+  // console.log(tempDummyNews)
+   // Geef hier eventueel data aan mee
+   const params = {
+    'sort': 'in_bloom'
+   }
 
+   response.render('nieuws.liquid', {news: tempDummyNews.data})
+})
+app.get('/nieuws-na-de-bloei', async function (request, response) {
+  // console.log(tempDummyNews)
+   // Geef hier eventueel data aan mee
+   const params = {
+    'sort': 'out_bloom'
+   }
+   
+   response.render('nieuws.liquid', {news: tempDummyNews.data})
+})
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
