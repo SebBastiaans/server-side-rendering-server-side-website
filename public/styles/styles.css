@@ -4,7 +4,7 @@ html{
 }
 
 
-/* alles van de header nieuws pagina *****************************/
+/* alles van de header nieuws overzicht pagina *****************************/
 .header-nieuws{
     display: flex;
     flex-direction: column;
@@ -12,17 +12,21 @@ html{
     h1{
         align-self: center;
     }
-    ul{
+    .nieuws-sort{
         display: flex;
         justify-content: space-between;
         padding-inline: 1rem;
 
         li{
             list-style: none;
+            background-color: #FFF0B5;
+            border-radius: .5rem;
+            padding: .5rem 1rem .5rem 1rem;
 
             a{
                 text-decoration: none;
                 color: black;
+                font-weight: bold;
             }
         }
     }
