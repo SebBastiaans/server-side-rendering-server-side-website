@@ -3,10 +3,16 @@
 {%  render 'partials/headerNieuws.liquid' %}
 
 <main>
-    <img src="" alt="">
-    <time datetime=""></time>
-    <h2></h2>
-    <p></p>
+    {% for newsItem in news%} hoe doe ik maar 1 item????
+        <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
+        <time datetime="{{ newsItem.date }}"></time>
+        <h2>
+            {{ newsItem.title }}
+        </h2>
+        <p>
+            {{ newsItem.body }}
+        </p>
+    {% endfor %}
 </main>
 
 {%  render 'partials/navbar.liquid' %}

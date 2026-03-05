@@ -99,6 +99,13 @@ app.get('/nieuws-na-de-bloei', async function (request, response) {
    
    response.render('nieuws.liquid', {news: tempDummyNews.data})
 })
+
+app.get('/nieuws-detail-AANPASSEN', async function (request, response) {
+  // console.log(tempDummyNews)
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   response.render('nieuwsDetail.liquid', {news: tempDummyNews.data})
+})
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
