@@ -1,16 +1,45 @@
 {%  render 'partials/head.liquid' %}
-
-<main>
+<header>
     <h1>Home</h1>
+</header>
+
+<main class="main-home">
+    
+    <h2>Welkom</h2>
 
     <ul> 
-        <p></p>
-        <li></li> {% comment %} List items dynamisch {% endcomment %}
+        <div class="home-list-title">
+            <img src="/assets/collectieIcon.svg" alt="collectie icon">
+            <h3>Bloemneveld collectie</h3>
+        </div>
+
+        {% if collectie %}
+            {% for collectieItem in collectie %}
+                <li><a href="/collectie/{{ collectieItem.slug }}">{{ collectieItem.title }}</a></li>
+            {% endfor %}
+        {% else %}
+            <p class="else-message">Je hebt nog niks gespaard. Start de <strong>Veldverkenner</strong> om meer te weten te komen over wat er groeit en je collectie aan te vullen.</p>
+        {% endif %}
+{% comment %} IDK of dit klopt???? {% endcomment %}
     </ul>
 
     <ul>
-        <p></p>
-        <li></li> {% comment %} list items dynamisch {% endcomment %}
+        <div class="home-list-title">
+            <img src="/assets/nieuwsIcon.svg" alt="Nieuws icon">
+            <h3>Veld Nieuws</h3>
+        </div>
+
+        {% if nieuws %}
+            {% for newsItem in nieuws %}
+                <li style="background-color: {{ newsItem.color }};">
+                    <p>Bloemneveld</p> 
+                    <a href="/nieuws/{{ newsItem.slug }}">{{ newsItem.title }}</a>
+                    <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
+                </li> 
+            {% endfor %}
+        {% else %}
+            <p class="else-message">Er is geen nieuws te melden.</p>    
+        {% endif %}
     </ul>
     
 </main>
