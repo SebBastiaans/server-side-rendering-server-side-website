@@ -23,7 +23,7 @@ main{
         li{
             list-style: none;
             background-color: #FFF0B5;
-            border-radius: .5rem;
+            border-radius: var(--border-radius);
             padding: .5rem 1rem .5rem 1rem;
 
             a{
@@ -75,7 +75,7 @@ main{
             animation-range: entry 0% cover 30%;
 
             img{
-                border-radius: 1rem;
+                border-radius: var(--border-radius);
                 width: 100%;
                 grid-area: image;
             }
@@ -87,7 +87,7 @@ main{
                 width: fit-content;
                 height: fit-content;
                 padding: .1rem .2rem .1rem .2rem;
-                border-radius: 5rem;
+                border-radius: 1rem;
             }
 
             a{
@@ -114,6 +114,24 @@ main{
 /* *************************************************************** */
 /* MARK: main nieuws detail pagina *****************************/
 .main-news-detail{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding-block: 1rem;
 
+    img{
+        border-radius: var(--border-radius);
+    }
+    time{
+        font-family: open-sans;
+    }
+    p:first-of-type{
+        font-family: open-sans;
+        font-weight: 700;
+        font-size: 20px;
+    }
+    p:nth-of-type(2){
+        font-family: inter;
+    }
 }
 /* *************************************************************** */
