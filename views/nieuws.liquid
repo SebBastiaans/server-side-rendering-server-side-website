@@ -5,8 +5,8 @@
 
     <ul class="nieuws-sort">
         <li><a href="/nieuws">Laatste</a></li>
-        <li><a href="/nieuws-in-de-bloei">In de bloei</a></li>
-        <li><a href="/nieuws-na-de-bloei">Na de bloei</a></li>
+        <li><a href="/nieuws/in-de-bloei">In de bloei</a></li>
+        <li><a href="/nieuws/na-de-bloei">Na de bloei</a></li>
     </ul>
 
     <form action="" method="GET">
@@ -16,13 +16,11 @@
 
 <main class="main-nieuws">
     <ul>
-        {% for newsItem in news %}
+        {% for newsItem in nieuws %}
             <li>
                 <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
                 <p>Bloemneveld</p> 
-                <a href="/nieuws-detail-AANPASSEN">
-                    {{ newsItem.title }}
-                </a>
+                <a href="/nieuws/{{ newsItem.slug }}">{{ newsItem.title }}</a>
             </li> 
         {% endfor %}
     </ul>
@@ -31,4 +29,3 @@
 {%  render 'partials/navbar.liquid' %}
 
 {%  render 'partials/foot.liquid' %}
-

@@ -7,35 +7,79 @@ import { Liquid } from 'liquidjs';
 
 
 const tempDummyNews = {
-  "data": [
+  data: [
     {
-      "id": 1,
-      "body": "De bloei ...",
-      "title": "Laatste kans om de nabloei te zien van de duizendblad",
-      "date": "2025-11-20",
-      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+      id: 1,
+      slug: "bloeien-in-2026",
+      title: "Laatste kans om de nabloei te zien van de duizendblad",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
     },
     {
-      "id": 2,
-      "body": "De bloei teunis...",
-      "title": "De zadenknoppen van de teunisbloem zijn nu goed te zien",
-      "date": "2025-11-20",
-      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+      id: 2,
+      slug: "zadenknoppen-teunisbloem",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
     },
     {
-      "id": 3,
-      "body": "De bloei 3...",
-      "title": "De zadenknoppen van de teunisbloem zijn nu goed te zien 3",
-      "date": "2025-11-20",
-      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+      id: 3,
+      slug: "teunisbloem-zaden-3",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien 3",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
     },
     {
-      "id": 4,
-      "body": "De bloei 4...",
-      "title": "De zadenknoppen van de teunisbloem zijn nu goed te zien 4",
-      "date": "2025-11-20",
-      "image": "ccc47447-c2db-441b-a18b-183ab5a0b280"
+      id: 4,
+      slug: "teunisbloem-zaden-4",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien 4",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
     },
+    {
+      id: 4,
+      slug: "teunisbloem-zaden-5",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien 5",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
+    {
+      id: 6,
+      slug: "teunisbloem-zaden-6",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien 6",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
+    {
+      id: 7,
+      slug: "teunisbloem-zaden-7",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien 7",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
+    {
+      id: 8,
+      slug: "teunisbloem-zaden-8",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien 8",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    },
+    {
+      id: 9,
+      slug: "teunisbloem-zaden-9",
+      title: "De zadenknoppen van de teunisbloem zijn nu goed te zien 9",
+      body: "De bloei van duizendblad is bijna voorbij, maar de plant is nog goed te zien. De bloemen zijn aan het opdrogen en blijven nog even zichtbaar. Dit is een laatste moment om te zien hoe duizendblad eruitziet na de bloei, voordat de bloemen niet meer zichtbaar zijn. Wat wel mooi zichtbaar blijft zijn de mooie bladeren.",
+      date: "2025-11-20",
+      image: "ccc47447-c2db-441b-a18b-183ab5a0b280"
+    }
   ]
 }
 
@@ -75,37 +119,63 @@ app.get('/', async function (request, response) {
    response.render('index.liquid')
 })
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
+// !!!! route naar NIEUWS PAGINA !!!!  
+// Route 1: in-bloom filter
+app.get('/nieuws/in-de-bloei', async function (request, response) {
+  const params = {
+    'fields': 'id,name,latin,slug,omscription,in_bloom,not_in_bloom,zones',
+    'filter[in_bloom][_nnull]': 'true'
+  }
+
+  const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
+  const plantResponseJSON = await plantResponse.json()
+
+  response.render('nieuws.liquid', {
+    nieuws: tempDummyNews.data,
+    planten: plantResponseJSON.data
+  })
+})
+
+// Route 2: not-in-bloom filter
+app.get('/nieuws/na-de-bloei', async function (request, response) {
+  const params = {
+    'fields': 'id,name,latin,slug,omscription,in_bloom,not_in_bloom,zones',
+    'filter[not_in_bloom][_nnull]': 'true'
+  }
+
+  const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
+  const plantResponseJSON = await plantResponse.json()
+
+  response.render('nieuws.liquid', {
+    nieuws: tempDummyNews.data,
+    planten: plantResponseJSON.data
+  })
+})
+
+// Route 3: alles (geen filter)
 app.get('/nieuws', async function (request, response) {
-  // console.log(tempDummyNews)
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
-   response.render('nieuws.liquid', {news: tempDummyNews.data})
-})
-app.get('/nieuws-in-de-bloei', async function (request, response) {
-  // console.log(tempDummyNews)
-   // Geef hier eventueel data aan mee
-   const params = {
-    'sort': 'in_bloom'
-   }
+  const params = {
+    'fields': 'id,name,latin,slug,omscription,in_bloom,not_in_bloom,zones',
+  }
 
-   response.render('nieuws.liquid', {news: tempDummyNews.data})
-})
-app.get('/nieuws-na-de-bloei', async function (request, response) {
-  // console.log(tempDummyNews)
-   // Geef hier eventueel data aan mee
-   const params = {
-    'sort': 'out_bloom'
-   }
-   
-   response.render('nieuws.liquid', {news: tempDummyNews.data})
+  const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
+  const plantResponseJSON = await plantResponse.json()
+
+  response.render('nieuws.liquid', {
+    nieuws: tempDummyNews.data,
+    planten: plantResponseJSON.data
+  })
 })
 
-app.get('/nieuws-detail-AANPASSEN', async function (request, response) {
-  // console.log(tempDummyNews)
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
-   response.render('nieuwsDetail.liquid', {news: tempDummyNews.data})
+// Route 4: detail pagina
+app.get('/nieuws/:slug', async function (request, response) {
+  const nieuwSlug = request.params.slug
+  const artikel = tempDummyNews.data.find(item => item.slug === nieuwSlug)
+
+  response.render('nieuwsDetail.liquid', { artikel: artikel })
 })
+ 
+ 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
@@ -123,3 +193,5 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+console.log("hoi! ik werk")

@@ -4,7 +4,7 @@ html{
 }
 
 
-/* alles van de header nieuws overzicht pagina *****************************/
+/* MARK: header nieuws overzicht pagina *****************************/
 .header-nieuws{
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ html{
     }
 }
 /* *************************************************************** */
-/* alles van de header nieuws detail pagina *****************************/
+/* MARK: header nieuws detail pagina *****************************/
 .header-nieuws-detail{
     display: flex;
     flex-direction: column;
@@ -79,9 +79,9 @@ html{
     font-weight: 700;
 }
 /* *************************************************************** */
-/* alles van de main nieuws pagina *****************************/
+/* MARK: main nieuws pagina *****************************/
 .main-nieuws{
-    padding-inline: .5rem;
+    padding-inline: 1rem;
     ul{
         padding: 0;
 
@@ -96,6 +96,10 @@ html{
             padding-block: 1rem;
             border-bottom: 2px solid var(--primary-text-color);
             align-items: flex-end;
+
+            animation: fade-in cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+            animation-timeline: view();
+            animation-range: entry 0% cover 30%;
 
             img{
                 border-radius: 1rem;
@@ -123,14 +127,28 @@ html{
         }
     }
 }
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* *************************************************************** */
 
-/* alles van de nav bar ********************************************* */
+/* MARK: nav bar ********************************************* */
 .navbar{
     display: flex;
     justify-content: space-evenly;
     padding-block: 1rem;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
 
     .navbar-item{
         display: flex;
@@ -147,3 +165,4 @@ html{
         }
     }
 }
+/* *************************************************************** */

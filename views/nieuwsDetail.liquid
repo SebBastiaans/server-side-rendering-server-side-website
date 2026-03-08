@@ -3,18 +3,17 @@
 {%  render 'partials/headerNieuws.liquid' %}
 
 <main>
-    {% for newsItem in news%} hoe doe ik maar 1 item????
-        <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
-        <time datetime="{{ newsItem.date }}"></time>
-        <p class="open-sans">
-            {{ newsItem.title }}
-        </p>
-        <p>
-            {{ newsItem.body }}
-        </p>
-    {% endfor %}
+    <img src="https://fdnd-agency.directus.app/assets/{{artikel.image}}" alt="{{newsItem.title}}">
+    <time datetime="{{ artikel.date }}"></time>
+    <p class="open-sans">
+        {{ artikel.title }}
+    </p>
+    <p>
+        {{ artikel.body }}
+    </p>
 </main>
 
 {%  render 'partials/navbar.liquid' %}
 
 {%  render 'partials/foot.liquid' %}
+
