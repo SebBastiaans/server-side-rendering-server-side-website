@@ -1,9 +1,9 @@
 {%  render 'partials/head.liquid' %}
 
-<header class="header-nieuws">
+<header class="header-news">
     <h1>Veld nieuws</h1>
 
-    <ul class="nieuws-sort">
+    <ul class="news-filter">
         <li><a href="/nieuws">Laatste</a></li>
         <li><a href="/nieuws/in-de-bloei">In de bloei</a></li>
         <li><a href="/nieuws/na-de-bloei">Na de bloei</a></li>
@@ -14,7 +14,7 @@
     </form>
 </header>
 
-<main class="main-nieuws">
+<main class="main-news">
     <ul>
         {% for newsItem in nieuws %}
             <li>
