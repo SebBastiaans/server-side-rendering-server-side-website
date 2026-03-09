@@ -42,9 +42,6 @@
     }
 
     a{
-        background-image: url('/assets/terugIcon.svg');
-        background-repeat: no-repeat;
-
         text-decoration: none;
         color: var(--primary-text-color);
         font-family: open-sans;
