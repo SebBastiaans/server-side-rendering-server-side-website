@@ -83,7 +83,8 @@ const tempDummyNews = {
   ]
 }
 
-console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
+
+// console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // Doe een fetch naar de data die je nodig hebt
 // const newsResponse = await fetch('...') //url in plakken
 
@@ -93,7 +94,6 @@ console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(apiResponseJSON)
-
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
@@ -129,11 +129,12 @@ app.get('/nieuws/in-de-bloei', async function (request, response) {
     'filter[in_bloom][_nnull]': 'true'
   }
 
+// Ook de frankendael_news toevoegen want dat krijg je te zien als list. Plants is alleen voor de volgorde hiervan
   const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
   const plantResponseJSON = await plantResponse.json()
 
   response.render('nieuws.liquid', {
-    nieuws: tempDummyNews.data,
+    // nieuws: tempDummyNews.data,
     planten: plantResponseJSON.data
   })
 })
@@ -144,12 +145,12 @@ app.get('/nieuws/na-de-bloei', async function (request, response) {
     'fields': 'id,name,latin,slug,omscription,in_bloom,not_in_bloom,zones',
     'filter[not_in_bloom][_nnull]': 'true'
   }
-
+// Ook de frankendael_news toevoegen want dat krijg je te zien als list. Plants is alleen voor de volgorde hiervan
   const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
   const plantResponseJSON = await plantResponse.json()
 
   response.render('nieuws.liquid', {
-    nieuws: tempDummyNews.data,
+    // nieuws: tempDummyNews.data,
     planten: plantResponseJSON.data
   })
 })
@@ -157,15 +158,15 @@ app.get('/nieuws/na-de-bloei', async function (request, response) {
 // Route 3: alles (geen filter)
 app.get('/nieuws', async function (request, response) {
   const params = {
-    'fields': 'id,name,latin,slug,omscription,in_bloom,not_in_bloom,zones',
+    'fields': 'id,body,title,date,image'
   }
 
-  const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
-  const plantResponseJSON = await plantResponse.json()
+  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?')
+  const newsResponseJSON = await newsResponse.json()
 
   response.render('nieuws.liquid', {
-    nieuws: tempDummyNews.data,
-    planten: plantResponseJSON.data,
+    // nieuws: tempDummyNews.data,
+    nieuws: newsResponseJSON.data,
     huidigPad: request.path
   })
 })
@@ -206,8 +207,6 @@ app.listen(app.get('port'), function () {
 //     { artikel: artikel })
 // })
 
-// app.use('/404', (req, res, next) => {
-//   res.status(404).send("404 BITCH hier is geen focking pagina")
-
-//   response.render('404.liquid')
-// })
+app.use((req, res, next) => {
+  res.status(404).render('404.liquid')
+})
