@@ -46,8 +46,10 @@
         color: var(--primary-text-color);
         font-family: open-sans;
         position: absolute;
-        padding-left: 1.6rem;
-        transform: translateY(70%);
+        padding-left: .5rem;
+        transform: translateY(60%);
+        display: flex;
+        column-gap: .5rem;
     }
 }
 /* *************************************************************** */
