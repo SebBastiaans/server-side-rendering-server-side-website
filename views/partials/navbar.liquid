@@ -1,21 +1,18 @@
 <nav class="navbar">
-    <div class="navbar-item">
+    <a href="/" {% if huidigPad == '/' %} class="active" {% endif %}>
         <img src="/assets/homeIcon.svg" alt="Home icoon">
-        <a href="/">Home</a>
-    </div>
+        Home</a>
 
-    <div class="navbar-item">
+    <a href="/veldverkenner" {% if huidigPad == '/veldverkenner' %} class="active" {% endif %}>
         <img src="/assets/veldverkennerIcon.svg" alt="Veldverkenner icoon">
-        <a href="/">Veldverkenner</a>
-    </div>
-
-    <div class="navbar-item">
+        Veldverkenner</a>
+    
+    {% assign checkSlice = huidigPad | slice: 0, 6 %}
+    <a href="/nieuws" {% if huidigPad == '/nieuws' or checkSlice == '/nieuws' %} class="active" {% endif %}>
         <img src="/assets/nieuwsIcon.svg" alt="Nieuws icoon">
-        <a href="/nieuws">Nieuws</a>
-    </div>
+        Nieuws</a>
 
-    <div class="navbar-item">
+    <a href="/collectie" {% if huidigPad == '/collectie' %} class="active" {% endif %}>
         <img src="/assets/collectieicon.svg" alt="Collectie icoon">
-        <a href="/collectie">Collectie</a>
-    </div>
+        Collectie</a>
 </nav>

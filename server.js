@@ -1,6 +1,6 @@
 // Importeer het npm package Express (uit de door npm aangemaakte node_modules map)
 // Deze package is geïnstalleerd via `npm install`, en staat als 'dependency' in package.json
-import express from 'express'
+import express, { response } from 'express'
 
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
@@ -116,7 +116,9 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+   response.render('index.liquid', {
+    huidigPad: request.path
+   })
 })
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // !!!! route naar NIEUWS PAGINA !!!!  
@@ -163,7 +165,8 @@ app.get('/nieuws', async function (request, response) {
 
   response.render('nieuws.liquid', {
     nieuws: tempDummyNews.data,
-    planten: plantResponseJSON.data
+    planten: plantResponseJSON.data,
+    huidigPad: request.path
   })
 })
 
@@ -172,7 +175,8 @@ app.get('/nieuws/:slug', async function (request, response) {
   const nieuwSlug = request.params.slug
   const artikel = tempDummyNews.data.find(item => item.slug === nieuwSlug)
 
-  response.render('nieuwsDetail.liquid', { artikel: artikel })
+  response.render('nieuwsDetail.liquid', 
+    { artikel: artikel })
 })
  
  
@@ -194,4 +198,16 @@ app.listen(app.get('port'), function () {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
-console.log("hoi! ik werk")
+
+// app.get('/404', async function (request, response) {
+
+  
+//   response.render('404.liquid', 
+//     { artikel: artikel })
+// })
+
+// app.use('/404', (req, res, next) => {
+//   res.status(404).send("404 BITCH hier is geen focking pagina")
+
+//   response.render('404.liquid')
+// })
