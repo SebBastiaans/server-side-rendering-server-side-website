@@ -125,13 +125,17 @@ app.get('/', async function (request, response) {
 // !!!! route naar NIEUWS PAGINA !!!!  
 // Route 1: in-bloom filter
 app.get('/nieuws/in-de-bloei', async function (request, response) {
-  const params = {
+  const plantParams = {
     'fields': 'id,name,latin,slug,omscription,in_bloom,not_in_bloom,zones',
     'filter[in_bloom][_nnull]': 'true'
   }
 
-// Ook de frankendael_news toevoegen want dat krijg je te zien als list. Plants is alleen voor de volgorde hiervan
-  const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
+  const [newsResponse, plantResponse] = await Promise.all([ //Hiermee zorg je ervoor dat beide tegelijk worden opgehaald.
+    fetch('https://fdnd-agency.directus.app/items/frankendael_news'),
+    fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(plantParams))
+  ])
+  
+  const newsResponseJSON = await newsResponse.json()
   const plantResponseJSON = await plantResponse.json()
 
   response.render('nieuws.liquid', {
@@ -142,12 +146,17 @@ app.get('/nieuws/in-de-bloei', async function (request, response) {
 
 // Route 2: not-in-bloom filter
 app.get('/nieuws/na-de-bloei', async function (request, response) {
-  const params = {
+  const plantParams = {
     'fields': 'id,name,latin,slug,omscription,in_bloom,not_in_bloom,zones',
     'filter[not_in_bloom][_nnull]': 'true'
   }
-// Ook de frankendael_news toevoegen want dat krijg je te zien als list. Plants is alleen voor de volgorde hiervan
-  const plantResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(params))
+
+  const [newsResponse, plantResponse] = await Promise.all([ //Hiermee zorg je ervoor dat beide tegelijk worden opgehaald.
+    fetch('https://fdnd-agency.directus.app/items/frankendael_news'),
+    fetch('https://fdnd-agency.directus.app/items/frankendael_plants?' + new URLSearchParams(plantParams)) //Hier komt die + ... aanvast omdat je wilt filteren op die parameters.
+  ])
+  
+  const newsResponseJSON = await newsResponse.json()
   const plantResponseJSON = await plantResponse.json()
 
   response.render('nieuws.liquid', {
@@ -162,7 +171,7 @@ app.get('/nieuws', async function (request, response) {
     'fields': 'id,body,title,date,image'
   }
 
-  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?')
+  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news')
   const newsResponseJSON = await newsResponse.json()
 
   response.render('nieuws.liquid', {
@@ -174,7 +183,7 @@ app.get('/nieuws', async function (request, response) {
 
 // Route 4: detail pagina
 app.get('/nieuws/:slug', async function (request, response) {
-  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?')
+  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news')
   const newsResponseJSON = await newsResponse.json()
 
   const nieuwSlug = request.params.slug
