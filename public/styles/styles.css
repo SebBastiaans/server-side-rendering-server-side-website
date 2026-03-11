@@ -41,8 +41,17 @@ header{
                 text-decoration: none;
                 color: var(--primary-text-color);
                 font-weight: bold;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+            &.active{
+                outline: 2px solid var(--active);
             }
         }
+
     }
 
     form{
@@ -60,6 +69,10 @@ header{
             background-repeat: no-repeat;
             background-position: .5rem center;
             width: 100%;
+
+            &:focus-visible{
+                outline: 2px solid var(--active);
+            }
         }
     }
 }
@@ -110,6 +123,10 @@ header{
                 color: var(--primary-text-color);
                 font-weight: bold;
                 font-size: 1.1rem;
+
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
     }

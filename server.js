@@ -140,7 +140,8 @@ app.get('/nieuws/in-de-bloei', async function (request, response) {
 
   response.render('nieuws.liquid', {
     // nieuws: tempDummyNews.data,
-    planten: plantResponseJSON.data
+    planten: plantResponseJSON.data,
+    huidigPad: request.path
   })
 })
 
@@ -161,7 +162,8 @@ app.get('/nieuws/na-de-bloei', async function (request, response) {
 
   response.render('nieuws.liquid', {
     // nieuws: tempDummyNews.data,
-    planten: plantResponseJSON.data
+    planten: plantResponseJSON.data,
+    huidigPad: request.path
   })
 })
 

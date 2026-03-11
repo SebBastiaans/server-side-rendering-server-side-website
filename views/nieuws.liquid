@@ -4,9 +4,15 @@
     <h1>Veld nieuws</h1>
 
     <ul class="news-filter">
-        <li><a href="/nieuws">Laatste</a></li>
-        <li><a href="/nieuws/in-de-bloei">In de bloei</a></li>
-        <li><a href="/nieuws/na-de-bloei">Na de bloei</a></li>
+        <li {% if huidigPad == '/nieuws' %} class="active" {% endif %}>
+            <a href="/nieuws">Laatste</a>
+        </li>
+        <li {% if huidigPad == '/nieuws/in-de-bloei' %} class="active" {% endif %}>
+            <a href="/nieuws/in-de-bloei">In de bloei</a>
+        </li>
+        <li {% if huidigPad == '/nieuws/na-de-bloei' %} class="active" {% endif %}>
+            <a href="/nieuws/na-de-bloei">Na de bloei</a>
+        </li>
     </ul>
 
     <form action="" method="GET">
