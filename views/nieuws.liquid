@@ -26,7 +26,16 @@
             <li>
                 <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
                 <p>Bloemneveld</p> 
-                <a href="/nieuws/{{ newsItem.slug }}">{{ newsItem.title }}</a>
+                <a href="/nieuws/{{ newsItem.slug }}">{{ newsItem.title |  truncate: 60}}</a>{% comment %} truncate zorgt voor maximaal aantal charactars, daarna worden het 3 puntjes{% endcomment %}
+            </li> 
+        {% endfor %}
+
+        {% comment %} Dit is dummy om te laten zien {% endcomment %}
+        {% for newsItem in nieuws %}
+            <li>
+                <img src="https://fdnd-agency.directus.app/assets/{{newsItem.image}}" alt="{{newsItem.title}}">
+                <p>Bloemneveld</p> 
+                <a href="/nieuws/{{ newsItem.slug }}">{{ newsItem.title |  truncate: 60}}</a>{% comment %} truncate zorgt voor maximaal aantal charactars, daarna worden het 3 puntjes{% endcomment %}
             </li> 
         {% endfor %}
     </ul>

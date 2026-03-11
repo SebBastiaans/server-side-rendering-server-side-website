@@ -169,11 +169,11 @@ app.get('/nieuws/na-de-bloei', async function (request, response) {
 
 // Route 3: alles (geen filter)
 app.get('/nieuws', async function (request, response) {
-  const params = {
-    'fields': 'id,body,title,date,image'
+  const newsParams = {
+    'fields': 'title,image,slug',
   }
 
-  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news')
+  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?' + new URLSearchParams(newsParams))
   const newsResponseJSON = await newsResponse.json()
 
   response.render('nieuws.liquid', {
