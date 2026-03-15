@@ -169,8 +169,11 @@ app.get('/nieuws/na-de-bloei', async function (request, response) {
 
 // Route 3: alles (geen filter)
 app.get('/nieuws', async function (request, response) {
-  const newsParams = {
-    'fields': 'title,image,slug',
+
+  const search = request.query.search
+
+  let newsParams = {
+    'fields': 'title,image,slug'
   }
 
   const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?' + new URLSearchParams(newsParams))
@@ -179,8 +182,28 @@ app.get('/nieuws', async function (request, response) {
   response.render('nieuws.liquid', {
     // nieuws: tempDummyNews.data,
     nieuws: newsResponseJSON.data,
-    huidigPad: request.path
+    huidigPad: request.path,
+    zoeken: search
   })
+})
+
+app.post('/nieuws', async function (request, response) {
+
+  const search = request.body.search
+  console.log(request.body)
+
+  let newsParams = {
+    'fields': 'title,image,slug'
+  }
+  
+  if(request.body.search != undefined){
+    newsParams['search'] = search
+  } 
+
+  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?' + new URLSearchParams(newsParams))
+  const newsResponseJSON = await newsResponse.json()
+
+  response.redirect('/nieuws')
 })
 
 // Route 4: detail pagina
